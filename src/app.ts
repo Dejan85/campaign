@@ -15,6 +15,10 @@ app.use(morgan("dev"));
 
 app.use("/", router);
 
+app.use((req, res) => {
+  res.send("hello world");
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`server is up on port ${process.env.PORT} `);
 });
