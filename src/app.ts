@@ -15,8 +15,8 @@ app.use(morgan("dev"));
 
 app.use("/", router);
 
-app.use((req, res) => {
-  res.send("hello world");
+app.use("/test", (req, res) => {
+  res.send("hello world from test route");
 });
 
 app.listen(process.env.PORT, () => {
