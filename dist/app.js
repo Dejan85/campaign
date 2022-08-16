@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const morgan_1 = __importDefault(require("morgan"));
-// import router from "./routes/index";
+const index_1 = __importDefault(require("./routes/index"));
 // process.on("uncaughtException", (err) => {
 //   console.log("test", err.message);
 // });
@@ -14,11 +14,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, morgan_1.default)("dev"));
-// test route
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
-// app.use("/", router);
+app.use("/", index_1.default);
 app.listen(process.env.PORT, () => {
     console.log(`server is up on port ${process.env.PORT} `);
 });

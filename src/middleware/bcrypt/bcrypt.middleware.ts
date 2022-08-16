@@ -13,7 +13,7 @@ export const validatePasswordAndEmail = tryCatch(async (req) => {
   const response = await getUserByEmail(email);
 
   if (!!response?.length) {
-    const user = response[0];
+    const user: { name: string; email: string; password: string } = response[0];
     req.user = user;
     const match = await bcrypt.compare(password, user.password);
 

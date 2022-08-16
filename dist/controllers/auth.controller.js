@@ -16,6 +16,8 @@ exports.signin = exports.signup = void 0;
 const utils_1 = require("../utils");
 const users_1 = require("../queries/users");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 // create user
 exports.signup = (0, utils_1.tryCatch)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { name, email, password } = req.body;

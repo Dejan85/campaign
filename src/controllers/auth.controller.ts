@@ -1,6 +1,9 @@
 import { tryCatch } from "../utils";
 import { createUser } from "../queries/users";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // create user
 export const signup = tryCatch(async (req, res) => {
@@ -16,7 +19,7 @@ export const signup = tryCatch(async (req, res) => {
 export const signin = tryCatch(async (req, res) => {
   const { email, name } = req.user;
 
-  const token = jwt.sign({ id: email }, process.env.JWT_SECRET, {
+  const token = jwt.sign({ id: email }, process.env.JWT_SECRET as string, {
     expiresIn: process.env.JWT_EXPIRES,
   });
 

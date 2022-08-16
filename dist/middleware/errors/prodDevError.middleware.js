@@ -17,6 +17,11 @@ const sendErrorProd = (err, res) => {
 exports.sendErrorProd = sendErrorProd;
 // send error for development
 const sendErrorDev = (err, res) => {
-    res.status(err.statusCode).json(Object.assign({ status: err.status, message: err.message, stack: err.stack }, err));
+    res.status(err.statusCode).json({
+        status: err.status,
+        message: err.message,
+        stack: err.stack,
+        // ...err,
+    });
 };
 exports.sendErrorDev = sendErrorDev;
