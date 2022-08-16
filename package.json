@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/app.js",
+  "engines": {
+    "node":"16.x"
+  },
   "scripts": {
     "build": "tsc",
     "deploy": "tsc && pm2 restart 0",
