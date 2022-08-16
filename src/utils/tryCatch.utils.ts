@@ -8,7 +8,7 @@ export const tryCatch =
     try {
       await fn(req, res, next);
       next();
-    } catch (error) {
+    } catch (error: any) {
       nextHandler(next, {
         ...error,
       });

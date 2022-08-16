@@ -12,6 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(morgan("dev"));
+
 app.use("/", router);
 
 app.listen(process.env.PORT, () => {

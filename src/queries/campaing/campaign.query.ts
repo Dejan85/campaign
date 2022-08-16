@@ -1,5 +1,5 @@
 import { pool } from "../../config/sql.config";
-import { CreateCampaignI } from "./campaing.interface";
+import { CreateCampaignI } from "./campaign.interface";
 
 // export const createCampaignTable = async () => {
 //   const query = `

@@ -22,6 +22,6 @@ export const sendErrorDev = (err: AppError, res: Response) => {
     status: err.status,
     message: err.message,
     stack: err.stack,
-    ...err,
+    // ...err,
   });
 };
